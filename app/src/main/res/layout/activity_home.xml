@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ryzen1400.abd.view.home.activity.HomeActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="25dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/line"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/home_bottombar"
+        app:layout_constraintRight_toRightOf="parent"></LinearLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/home_vp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/home_bottombar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_vp"
+        app:layout_constraintVertical_bias="0.75">
+
+        <RelativeLayout
+            android:id="@+id/price_rl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:padding="3dp">
+
+            <TextView
+                android:id="@+id/price_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="零售价格"
+                android:textColor="@color/textGray"
+                android:textSize="12sp" />
+
+            <Button
+                android:clickable="false"
+                android:id="@+id/price_bt"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_above="@+id/price_text"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/price_selector" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/up_rl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:padding="3dp">
+
+            <TextView
+                android:id="@+id/up_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="涨跌幅度"
+                android:textColor="@color/textGray"
+                android:textSize="12sp" />
+
+            <Button
+                android:clickable="false"
+                android:id="@+id/up_bt"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_above="@+id/up_text"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/up_selector" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/market_rl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:padding="3dp">
+
+            <TextView
+                android:id="@+id/market_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="农批市场"
+                android:textColor="@color/textGray"
+                android:textSize="12sp" />
+
+            <Button
+                android:clickable="false"
+                android:id="@+id/market_bt"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_above="@+id/market_text"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/market_selector" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/message_rl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:padding="3dp">
+
+            <TextView
+                android:id="@+id/message_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="价格资讯"
+                android:textColor="@color/textGray"
+                android:textSize="12sp" />
+
+            <Button
+                android:clickable="false"
+                android:id="@+id/message_bt"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_above="@+id/message_text"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/message_selector" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

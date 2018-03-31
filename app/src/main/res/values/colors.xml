@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00b29c</color>
+    <color name="colorPrimaryDark">#00b29c</color>
+    <color name="colorPrimaryLight">#2ea1d7cf</color>
+
+    <color name="colorAccent">#ca289a</color>
+    <color name="white">#ffffff</color>
+    <color name="fg_price_titlebar_gray">#c2696969</color>
+    <color name="line">#d9d9d9</color>
+    <color name="textGray">#8a8a8a</color>
+    <color name="black">#232323</color>
+</resources>
