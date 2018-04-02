@@ -4,11 +4,14 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
+import com.avos.avoscloud.AVObject;
 import com.example.ryzen1400.abd.presenter.home.MessageFragmentPresenterImpl;
 import com.example.ryzen1400.abd.R;
 import com.example.ryzen1400.abd.view.base.BaseFragment;
 import com.example.ryzen1400.abd.view.home.adapter.fragment.MessageFragmentRvAdapter;
 import com.example.ryzen1400.abd.view.impl.MessageFragmentViewImpl;
+
+import java.util.List;
 
 import butterknife.BindView;
 import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
@@ -23,7 +26,7 @@ public class MessageFragment extends BaseFragment<MessageFragmentPresenterImpl> 
     RecyclerView rv;
 
     Context context;
-
+    MessageFragmentRvAdapter adapter;
 
     @Override
     public int setContentView() {
@@ -50,7 +53,7 @@ public class MessageFragment extends BaseFragment<MessageFragmentPresenterImpl> 
        //设置并列2行的layoutManager
        rv.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
        //设置adapter
-       MessageFragmentRvAdapter adapter=new MessageFragmentRvAdapter(getActivity().getApplicationContext());
+        adapter=new MessageFragmentRvAdapter(getActivity().getApplicationContext());
        AlphaInAnimationAdapter alphaAdapter = new AlphaInAnimationAdapter(adapter);
        alphaAdapter.setDuration(2000);
       // alphaAdapter.setInterpolator(new OvershootInterpolator());
@@ -74,7 +77,8 @@ public class MessageFragment extends BaseFragment<MessageFragmentPresenterImpl> 
 
     @Override
     public void onRefresh(Object... parms) {
-
+        adapter.data= (List<AVObject>) parms[0];
+        adapter.notifyDataSetChanged();
     }
 
 

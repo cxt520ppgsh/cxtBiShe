@@ -20,14 +20,14 @@ import rx.schedulers.Schedulers;
 
 public class PriceFragmentPresenterImpl implements BasePresenter {
 
-    SoftReference<PriceFragmentViewImpl> view;
+    PriceFragmentViewImpl view;
     public PriceFragmentPresenterImpl(PriceFragmentViewImpl priceFragmentView){
-        view = new SoftReference<PriceFragmentViewImpl>(priceFragmentView);
+        view =priceFragmentView;
     }
 
   public   void getInitData(){
 
-      Observable.create(new Observable.OnSubscribe<String>() {
+     /* Observable.create(new Observable.OnSubscribe<String>() {
           @Override
           public void call(Subscriber<? super String> subscriber) {
 
@@ -65,6 +65,6 @@ public class PriceFragmentPresenterImpl implements BasePresenter {
                   }
               });
 
-
+*/
     }
 }

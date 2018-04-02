@@ -41,6 +41,7 @@ public class PriceFragment extends BaseFragment<PriceFragmentPresenterImpl> impl
     Button   mPreSelectedBt;
     Context application;
     HomeActivity activity;
+    PriceFragmentTopVpAdapter adapter;
     int vpPosition=0;
     int i=0;
     Timer  timer ;
@@ -71,7 +72,7 @@ public class PriceFragment extends BaseFragment<PriceFragmentPresenterImpl> impl
 
     void initTopVp() {
          application=getActivity().getApplication();
-        PriceFragmentTopVpAdapter adapter = new PriceFragmentTopVpAdapter(getLayoutInflater(), getActivity());
+         adapter = new PriceFragmentTopVpAdapter(getLayoutInflater(), getActivity());
         topVp.setAdapter(adapter);
         setDotInViewPager();
         topVpText.setText("广东省主要农产品零售价格微幅波动");

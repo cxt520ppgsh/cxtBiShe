@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
+import com.avos.avoscloud.AVObject;
 import com.example.ryzen1400.abd.presenter.home.MarketFragmentPresenterImpl;
 import com.example.ryzen1400.abd.R;
 import com.example.ryzen1400.abd.view.base.BaseFragment;
@@ -13,6 +14,9 @@ import com.example.ryzen1400.abd.view.impl.MarketFragmentViewImpl;
 import butterknife.BindView;
 import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
+import  com.example.ryzen1400.abd.model.base.BaseLoadFinishListener;
+
+import java.util.List;
 
 /**
  * Created by ryzen1400 on 2017/12/25.
@@ -21,7 +25,7 @@ import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
 public class MarketFragment extends BaseFragment<MarketFragmentPresenterImpl> implements MarketFragmentViewImpl {
     @BindView(R.id.rv)
     RecyclerView rv;
-
+    MarketFragmentRvAdapter adapter;
     Context context;
 
 
@@ -41,16 +45,14 @@ public class MarketFragment extends BaseFragment<MarketFragmentPresenterImpl> im
     }
 
     void initView() {
-
        initRl();
     }
 
    void initRl(){
-
        //设置并列2行的layoutManager
        rv.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
        //设置adapter
-       MarketFragmentRvAdapter adapter=new MarketFragmentRvAdapter(getActivity().getApplicationContext());
+        adapter=new MarketFragmentRvAdapter(getActivity().getApplicationContext());
        AlphaInAnimationAdapter alphaAdapter = new AlphaInAnimationAdapter(adapter);
        alphaAdapter.setDuration(2000);
       // alphaAdapter.setInterpolator(new OvershootInterpolator());
@@ -72,13 +74,13 @@ public class MarketFragment extends BaseFragment<MarketFragmentPresenterImpl> im
 
     }
 
+
+
+
+
     @Override
     public void onRefresh(Object... parms) {
-
+        adapter.data= (List<AVObject>) parms[0];
+        adapter.notifyDataSetChanged();
     }
-
-
-
-
-
 }

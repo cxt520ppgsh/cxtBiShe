@@ -30,12 +30,12 @@ import butterknife.ButterKnife;
  */
 
 public class MessageFragmentRvAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    List<AVObject> data=new ArrayList<>();
+   public List<AVObject> data=new ArrayList<>();
     Context context;
    public MessageFragmentRvAdapter(Context context){
 
         this.context=context;
-        setMessageFragmentFragmentRvData();
+
     }
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -67,24 +67,7 @@ public class MessageFragmentRvAdapter extends RecyclerView.Adapter<RecyclerView.
             }
         });
    }
-    void setMessageFragmentFragmentRvData(){
 
-        AVQuery<AVObject> avQuery = new AVQuery<>("News");
-
-        LeancloudCallBack callback=new LeancloudCallBack() {
-            @Override
-            public void onSucced(final List<AVObject> data) {
-               MessageFragmentRvAdapter.this.data=data;
-                MessageFragmentRvAdapter.this.notifyDataSetChanged();
-
-
-
-            }
-        };
-        LeanCloudUtils.getInstance().getTable(avQuery,callback);
-
-
-    }
 
     @Override
     public int getItemCount() {

@@ -1,12 +1,18 @@
 package com.example.ryzen1400.abd.presenter.home;
 
+import com.avos.avoscloud.AVObject;
+import com.avos.avoscloud.AVQuery;
 import com.example.ryzen1400.abd.presenter.base.BasePresenter;
 import com.example.ryzen1400.abd.model.bean.User;
+import com.example.ryzen1400.abd.utils.finalObject.LeancloudCallBack;
+import com.example.ryzen1400.abd.utils.leancloud.LeanCloudUtils;
 import com.example.ryzen1400.abd.utils.mNetWork.NetWorkUtils;
 import com.example.ryzen1400.abd.utils.mNetWork.mHttpResult.DefaultHttpResult;
+import com.example.ryzen1400.abd.view.home.adapter.fragment.MarketFragmentRvAdapter;
 import com.example.ryzen1400.abd.view.impl.MarketFragmentViewImpl;
 
 import java.lang.ref.SoftReference;
+import java.util.List;
 
 import rx.Observable;
 import rx.Subscriber;
@@ -21,14 +27,14 @@ import rx.schedulers.Schedulers;
 public class MarketFragmentPresenterImpl implements BasePresenter {
 
 
-    SoftReference<MarketFragmentViewImpl> view;
+    MarketFragmentViewImpl view;
     public MarketFragmentPresenterImpl(MarketFragmentViewImpl upFragmentViewImpl){
-        view = new SoftReference<MarketFragmentViewImpl>(upFragmentViewImpl);
+        view = upFragmentViewImpl;
     }
 
     public   void getInitData(){
-
-        Observable.create(new Observable.OnSubscribe<String>() {
+        getRvData();
+      /*  Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(Subscriber<? super String> subscriber) {
 
@@ -65,8 +71,20 @@ public class MarketFragmentPresenterImpl implements BasePresenter {
 
                     }
                 });
-
+*/
 
     }
+void getRvData(){
 
+        AVQuery<AVObject> avQuery = new AVQuery<>("Market");
+
+        LeancloudCallBack callback=new LeancloudCallBack() {
+            @Override
+            public void onSucced(final List<AVObject> data) {
+                view.onRefresh(data);
+            }
+        };
+        LeanCloudUtils.getInstance().getTable(avQuery,callback);
+
+}
 }

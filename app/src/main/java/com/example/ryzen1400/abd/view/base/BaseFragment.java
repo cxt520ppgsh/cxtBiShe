@@ -16,15 +16,37 @@ import butterknife.ButterKnife;
 public abstract class BaseFragment<P> extends Fragment {
    public P presenterImpl;
     View view;
+    private boolean isLazyLoaded;
+    private boolean isPrepared;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
      view=inflater.inflate(setContentView(),container,false);
      ButterKnife.bind(this, view);
         presenterImpl=initPresenter();
-     init();
      return view;
     }
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        isPrepared = true;
+        lazyLoad();
+    }
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        lazyLoad();
+    }
+
+    private void lazyLoad() {
+        if (getUserVisibleHint() && isPrepared && !isLazyLoaded) {
+            init();
+            isLazyLoaded = true;
+        }
+    }
+
+
+
     public abstract int setContentView();
     public abstract void  init();
     public abstract P initPresenter();
@@ -36,4 +58,5 @@ public abstract class BaseFragment<P> extends Fragment {
         presenterImpl=null;
         OnDestroy();
     }
+
 }

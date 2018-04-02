@@ -30,25 +30,13 @@ import butterknife.ButterKnife;
 public class MarketFragmentRvAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     Context context;
-    List<AVObject> data=new ArrayList<>();
+  public   List<AVObject> data=new ArrayList<>();
    public MarketFragmentRvAdapter(Context context){
 
         this.context=context;
-        getData();
     }
 
-    void getData(){
-        AVQuery<AVObject> avQuery = new AVQuery<>("Market");
 
-        LeancloudCallBack callback=new LeancloudCallBack() {
-            @Override
-            public void onSucced(final List<AVObject> data) {
-                MarketFragmentRvAdapter.this.data=data;
-                MarketFragmentRvAdapter.this.notifyDataSetChanged();
-            }
-        };
-        LeanCloudUtils.getInstance().getTable(avQuery,callback);
-    }
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context=parent.getContext();
