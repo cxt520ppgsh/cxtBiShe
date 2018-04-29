@@ -6,16 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.avos.avoscloud.AVObject;
-import com.avos.avoscloud.AVQuery;
 import com.bumptech.glide.Glide;
 import com.example.ryzen1400.abd.R;
-import com.example.ryzen1400.abd.utils.finalObject.FinalObject;
-import com.example.ryzen1400.abd.utils.finalObject.LeancloudCallBack;
-import com.example.ryzen1400.abd.utils.leancloud.LeanCloudUtils;
 
 import java.util.ArrayList;
 import java.util.List;

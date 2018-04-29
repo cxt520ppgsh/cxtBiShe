@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.ryzen1400.abd.model.base.BaseModel;
 import com.example.ryzen1400.abd.presenter.home.PriceFragmentPresenterImpl;
 import com.example.ryzen1400.abd.R;
 import com.example.ryzen1400.abd.utils.screen.ScreenCalculater;

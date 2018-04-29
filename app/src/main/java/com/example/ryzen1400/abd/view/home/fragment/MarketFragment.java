@@ -28,6 +28,15 @@ public class MarketFragment extends BaseFragment<MarketFragmentPresenterImpl> im
     MarketFragmentRvAdapter adapter;
     Context context;
 
+    @Override
+    public void onRefresh(Object... parms) {
+        adapter.data= (List<AVObject>) parms[0];
+        adapter.notifyDataSetChanged();
+    }
+
+    void initData() {
+        presenterImpl.getInitData();
+    }
 
     @Override
     public int setContentView() {
@@ -40,9 +49,7 @@ public class MarketFragment extends BaseFragment<MarketFragmentPresenterImpl> im
         initView();
     }
 
-    void initData() {
-        presenterImpl.getInitData();
-    }
+
 
     void initView() {
        initRl();
@@ -78,9 +85,5 @@ public class MarketFragment extends BaseFragment<MarketFragmentPresenterImpl> im
 
 
 
-    @Override
-    public void onRefresh(Object... parms) {
-        adapter.data= (List<AVObject>) parms[0];
-        adapter.notifyDataSetChanged();
-    }
+
 }

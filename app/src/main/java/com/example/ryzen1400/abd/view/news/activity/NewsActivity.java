@@ -1,30 +1,13 @@
 package com.example.ryzen1400.abd.view.news.activity;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.avos.avoscloud.AVException;
-import com.avos.avoscloud.AVObject;
-import com.avos.avoscloud.AVQuery;
-import com.avos.avoscloud.SaveCallback;
 import com.bumptech.glide.Glide;
 import com.example.ryzen1400.abd.R;
 import com.example.ryzen1400.abd.presenter.home.HomeActivityPresenterImpl;
-import com.example.ryzen1400.abd.utils.finalObject.LeancloudCallBack;
-import com.example.ryzen1400.abd.utils.leancloud.LeanCloudUtils;
 import com.example.ryzen1400.abd.view.base.BaseActivity;
-import com.example.ryzen1400.abd.view.home.adapter.fragment.UpFragmentRvAdapter;
 import com.example.ryzen1400.abd.view.impl.HomeActivityViewImpl;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 

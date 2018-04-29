@@ -3,7 +3,6 @@ package com.example.ryzen1400.abd.view.home.adapter.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.avos.avoscloud.AVObject;
-import com.avos.avoscloud.AVQuery;
 import com.bumptech.glide.Glide;
 import com.example.ryzen1400.abd.R;
-import com.example.ryzen1400.abd.utils.finalObject.LeancloudCallBack;
-import com.example.ryzen1400.abd.utils.leancloud.LeanCloudUtils;
 import com.example.ryzen1400.abd.view.news.activity.NewsActivity;
 
 import java.util.ArrayList;

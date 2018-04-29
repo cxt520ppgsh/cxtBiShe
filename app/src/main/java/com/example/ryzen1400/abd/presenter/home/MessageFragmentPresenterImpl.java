@@ -3,22 +3,11 @@ package com.example.ryzen1400.abd.presenter.home;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
 import com.example.ryzen1400.abd.presenter.base.BasePresenter;
-import com.example.ryzen1400.abd.model.bean.User;
 import com.example.ryzen1400.abd.utils.finalObject.LeancloudCallBack;
-import com.example.ryzen1400.abd.utils.leancloud.LeanCloudUtils;
-import com.example.ryzen1400.abd.utils.mNetWork.NetWorkUtils;
-import com.example.ryzen1400.abd.utils.mNetWork.mHttpResult.DefaultHttpResult;
-import com.example.ryzen1400.abd.view.home.adapter.fragment.MessageFragmentRvAdapter;
+import com.example.ryzen1400.abd.utils.mNetWork.Exception.leancloud.LeanCloudUtils;
 import com.example.ryzen1400.abd.view.impl.MessageFragmentViewImpl;
 
-import java.lang.ref.SoftReference;
 import java.util.List;
-
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action0;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by ryzen1400 on 2017/12/25.

@@ -1,6 +1,5 @@
 package com.example.ryzen1400.abd.view.home.adapter.fragment;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,9 +13,8 @@ import com.avos.avoscloud.AVQuery;
 import com.bumptech.glide.Glide;
 import com.example.ryzen1400.abd.R;
 import com.example.ryzen1400.abd.utils.finalObject.LeancloudCallBack;
-import com.example.ryzen1400.abd.utils.leancloud.LeanCloudUtils;
+import com.example.ryzen1400.abd.utils.mNetWork.Exception.leancloud.LeanCloudUtils;
 import com.example.ryzen1400.abd.view.home.activity.HomeActivity;
-import com.example.ryzen1400.abd.view.home.fragment.PriceFragment;
 
 import java.util.List;
 

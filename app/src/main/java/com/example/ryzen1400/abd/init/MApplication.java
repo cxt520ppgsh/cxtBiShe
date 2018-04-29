@@ -3,6 +3,10 @@ package com.example.ryzen1400.abd.init;
 import android.app.Application;
 
 import com.avos.avoscloud.AVOSCloud;
+import com.example.ryzen1400.abd.model.bean.MarketItem;
+import com.example.ryzen1400.abd.model.bean.MessageItem;
+import com.example.ryzen1400.abd.model.bean.PriceItem;
+import com.example.ryzen1400.abd.model.bean.UpItem;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

@@ -1,6 +1,7 @@
 package com.example.ryzen1400.abd.utils.mNetWork.mApi;
 
 import com.example.ryzen1400.abd.model.bean.ErrorCode;
+import com.example.ryzen1400.abd.model.bean.PriceItem;
 import com.example.ryzen1400.abd.model.bean.User;
 import com.example.ryzen1400.abd.utils.mNetWork.mHttpResult.DefaultHttpResult;
 
@@ -39,4 +40,7 @@ public interface NetWorkApi {
                                       @Field("uid") String uid,
                                       @Field("type") String type
     );
+    @FormUrlEncoded
+    @POST("index.php?g=Platform&m=API")
+    Observable<DefaultHttpResult<PriceItem>> getPriceFragmentData();
 }
